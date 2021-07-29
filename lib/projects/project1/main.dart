@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/cupertino.dart';
 import "package:flutter/material.dart";
-import 'package:hello_world_flutter/const/colors.dart';
+import 'package:hello_world_flutter/projects/project1/const/colors.dart';
 
 void main() => runApp(BaseDesign());
 
