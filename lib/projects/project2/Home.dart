@@ -30,7 +30,9 @@ class SubHome extends State<Home> {
             decoration: TextDecoration.none,
             fontSize: 75,
             fontFamily: widget.font.fontFamily,
-            fontWeight: widget.font.getRandomFont()),
+            fontWeight: widget.font.getRandomFont(),
+            fontStyle: FontStyle.italic,
+            color: Colors.white,),
       ),
     ));
   }
