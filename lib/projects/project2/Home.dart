@@ -82,7 +82,8 @@ class SubHome extends State<Home> {
                     ),
                   )
                 ]),
-                MyImage()
+                MyImage(),
+                MyButton()
               ],
             )));
   }
@@ -102,5 +103,30 @@ class MyImage extends StatelessWidget {
     // AssetImage assetImage = AssetImage("resources/images/myIcon.png");
     // Image image = Image(image: assetImage);
     // return Container(child: image);
+  }
+}
+
+class MyButton extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: RaisedButton(
+        color: Colors.deepOrange,
+        child: Text("press me"),
+        elevation: 6.0,
+        onPressed: () => pressButton(context),
+      ),
+    );
+  }
+
+  void pressButton(BuildContext context) {
+    var alertDialog = AlertDialog(
+      title: Text("this is my dialog"),
+      content: Text("this is the content of the dialog"),
+    );
+
+    showDialog(
+        context: context, builder: (BuildContext context) => alertDialog);
   }
 }
