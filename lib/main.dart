@@ -5,7 +5,7 @@ import 'projects/project1/body.dart';
 import 'projects/project2/body.dart';
 
 
-void main() => runApp(getApp(0));
+void main() => runApp(getApp(2));
 
 StatelessWidget getApp(int version){
   if(version == 0)

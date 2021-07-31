@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hello_world_flutter/projects/project2/const.dart';
 
@@ -14,26 +13,94 @@ class Home extends StatefulWidget {
 class SubHome extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Center(
         child: Container(
-      alignment: Alignment.center,
-      color: Colors.deepPurple,
-      // width: 200,
-      // height: 100,
-      //     margin: EdgeInsets.all(15.0),
-      margin: EdgeInsets.only(left: 10, top: 20, right: 30, bottom: 40),
-      child: Text(
-        "Flight",
-        textDirection: TextDirection.ltr,
-        style: TextStyle(
-            decoration: TextDecoration.none,
-            fontSize: 75,
-            fontFamily: widget.font.fontFamily,
-            fontWeight: widget.font.getRandomFont(),
-            fontStyle: FontStyle.italic,
-            color: Colors.white,),
+            alignment: Alignment.center,
+            color: Colors.deepPurple,
+            padding: EdgeInsets.only(left: 10.0, top: 40.0),
+            // width: 200,
+            // height: 100,
+            //     margin: EdgeInsets.all(15.0),
+            // margin: EdgeInsets.only(left: 10, top: 20, right: 30, bottom: 40),
+            child: Column(
+              children: <Widget>[
+                Row(children: [
+                  Expanded(
+                      child: Text(
+                    "one",
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(
+                      decoration: TextDecoration.none,
+                      fontSize: 35,
+                      fontFamily: widget.font.fontFamily,
+                      fontWeight: widget.font.getRandomFont(),
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white,
+                    ),
+                  )),
+                  Expanded(
+                    child: Text(
+                      "two",
+                      textDirection: TextDirection.ltr,
+                      style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontSize: 35,
+                        fontFamily: widget.font.fontFamily,
+                        fontWeight: widget.font.getRandomFont(),
+                        fontStyle: FontStyle.italic,
+                        color: Colors.white,
+                      ),
+                    ),
+                  )
+                ]),
+                Row(children: [
+                  Expanded(
+                      child: Text(
+                    "three",
+                    textDirection: TextDirection.ltr,
+                    style: TextStyle(
+                      decoration: TextDecoration.none,
+                      fontSize: 35,
+                      fontFamily: widget.font.fontFamily,
+                      fontWeight: widget.font.getRandomFont(),
+                      fontStyle: FontStyle.italic,
+                      color: Colors.white,
+                    ),
+                  )),
+                  Expanded(
+                    child: Text(
+                      "four",
+                      textDirection: TextDirection.ltr,
+                      style: TextStyle(
+                        decoration: TextDecoration.none,
+                        fontSize: 35,
+                        fontFamily: widget.font.fontFamily,
+                        fontWeight: widget.font.getRandomFont(),
+                        fontStyle: FontStyle.italic,
+                        color: Colors.white,
+                      ),
+                    ),
+                  )
+                ]),
+                MyImage()
+              ],
+            )));
+  }
+}
+
+class MyImage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Container(
+      child: Image(
+        height: 300.0,
+        width: 300.0,
+        image: AssetImage('resources/images/myIcon.png'),
       ),
-    ));
+    );
+    // AssetImage assetImage = AssetImage("resources/images/myIcon.png");
+    // Image image = Image(image: assetImage);
+    // return Container(child: image);
   }
 }
