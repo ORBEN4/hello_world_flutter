@@ -48,3 +48,4 @@ app.*.map.json
 
 # New ignores
 #resources
+lib/main.dart
