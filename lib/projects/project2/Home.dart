@@ -10,6 +10,7 @@ class Home extends StatefulWidget {
   SubHome createState() => SubHome();
 }
 
+
 class SubHome extends State<Home> {
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class SubHome extends State<Home> {
                       fontSize: 35,
                       fontFamily: widget.font.fontFamily,
                       fontWeight: widget.font.getRandomFont(),
-                      fontStyle: FontStyle.italic,
+                      // fontStyle: FontStyle.italic,
                       color: Colors.white,
                     ),
                   )),
@@ -47,7 +48,7 @@ class SubHome extends State<Home> {
                         fontSize: 35,
                         fontFamily: widget.font.fontFamily,
                         fontWeight: widget.font.getRandomFont(),
-                        fontStyle: FontStyle.italic,
+                        // fontStyle: FontStyle.italic,
                         color: Colors.white,
                       ),
                     ),
@@ -63,7 +64,7 @@ class SubHome extends State<Home> {
                       fontSize: 35,
                       fontFamily: widget.font.fontFamily,
                       fontWeight: widget.font.getRandomFont(),
-                      fontStyle: FontStyle.italic,
+                      // fontStyle: FontStyle.italic,
                       color: Colors.white,
                     ),
                   )),
@@ -76,13 +77,13 @@ class SubHome extends State<Home> {
                         fontSize: 35,
                         fontFamily: widget.font.fontFamily,
                         fontWeight: widget.font.getRandomFont(),
-                        fontStyle: FontStyle.italic,
+                        // fontStyle: FontStyle.italic,
                         color: Colors.white,
                       ),
                     ),
                   )
                 ]),
-                MyImage(),
+                // MyImage(),
                 MyButton()
               ],
             )));
