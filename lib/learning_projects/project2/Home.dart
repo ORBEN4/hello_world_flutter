@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hello_world_flutter/projects/project2/const.dart';
+import 'package:hello_world_flutter/learning_projects/project2/const.dart';
 
 class Home extends StatefulWidget {
   Home({Key? key, required this.font}) : super(key: key);

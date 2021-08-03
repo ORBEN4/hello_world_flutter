@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'projects/built_in/body.dart';
-import 'projects/project1/body.dart';
-import 'projects/project2/body.dart';
-import 'projects/project2/Home.dart';
+import 'learning_projects/built_in/body.dart';
+import 'learning_projects/project1/body.dart';
+import 'learning_projects/project2/body.dart';
 
 
-void main() => runApp(getApp(2.1));
+void main() => runApp(getApp(2.2));
 
 StatelessWidget getApp(double version){
   if(version == 0)
@@ -17,6 +16,8 @@ StatelessWidget getApp(double version){
     return Project2Body();
   else if(version ==2.1)
     return Project2_1Body();
+  else if(version ==2.2)
+    return Project2_2Body();
   else
     throw UnimplementedError();
 }

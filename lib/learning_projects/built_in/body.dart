@@ -39,7 +39,10 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   MyHomePage(
-      {Key? key, required this.title, required this.name/*, required this.calculator*/})
+      {Key? key,
+      required this.title,
+      required this.name /*, required this.calculator*/
+      })
       : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
@@ -53,6 +56,7 @@ class MyHomePage extends StatefulWidget {
 
   final String title;
   final String name;
+
   // final Calculator calculator;
 
   @override
@@ -63,14 +67,27 @@ class _MyHomePageState extends State<MyHomePage> {
   double _counter = 0;
 
   void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter = CalculatorFactory().getCalculator().calculate(_counter, Random().nextDouble());
-    });
+    setState(calc);
+  }
+
+  void calc() {
+    // This call to setState tells the Flutter framework that something has
+    // changed in this State, which causes it to rerun the build method below
+    // so that the display can reflect the updated values. If we changed
+    // _counter without calling setState(), then the build method would not be
+    // called again, and so nothing would appear to happen.
+    _counter = CalculatorFactory()
+        .getCalculator()
+        .calculate(_counter, getActualRandom());
+  }
+
+  double getActualRandom() {
+    return getRandom(1, 100);
+  }
+
+  double getRandom(double min, double max) {
+    double scale = max - min;
+    return Random().nextDouble() * scale + min;
   }
 
   @override
@@ -109,14 +126,11 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'Your final rank is:',
             ),
             Text(
               '$_counter',
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .headline4,
+              style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
@@ -137,6 +151,7 @@ abstract class Calculator {
 class Calculator1 extends Calculator {
   @override
   double calculate(double counter, double random) {
+    debugPrint("the second number is $random");
     return counter + random;
   }
 }
@@ -144,6 +159,7 @@ class Calculator1 extends Calculator {
 class Calculator2 extends Calculator {
   @override
   double calculate(double counter, double random) {
+    debugPrint("the second number is $random");
     return counter - random;
   }
 }
@@ -151,6 +167,7 @@ class Calculator2 extends Calculator {
 class Calculator3 extends Calculator {
   @override
   double calculate(double counter, double random) {
+    debugPrint("the second number is $random");
     return counter * random;
   }
 }
@@ -158,6 +175,7 @@ class Calculator3 extends Calculator {
 class Calculator4 extends Calculator {
   @override
   double calculate(double counter, double random) {
+    debugPrint("the second number is $random");
     return counter / random;
   }
 }
@@ -165,22 +183,25 @@ class Calculator4 extends Calculator {
 class Calculator5 extends Calculator {
   @override
   double calculate(double counter, double random) {
+    debugPrint("the second number is $random");
     return pow(counter, random).toDouble();
   }
 }
 
-class CalculatorFactory{
-  Calculator getCalculator(){
-    int index = Random().nextInt(5);
-    if(index == 0)
+class CalculatorFactory {
+  Calculator getCalculator([int index = -1]) {
+    if (index.isNegative) {
+      index = Random().nextInt(5);
+    }
+    if (index == 0)
       return Calculator1();
-    else if(index == 1)
+    else if (index == 1)
       return Calculator2();
-    else if(index == 2)
+    else if (index == 2)
       return Calculator3();
-    else if(index == 3)
+    else if (index == 3)
       return Calculator4();
-    else if(index == 4)
+    else if (index == 4)
       return Calculator5();
     else
       throw UnimplementedError();
