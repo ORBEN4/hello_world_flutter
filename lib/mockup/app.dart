@@ -5,8 +5,11 @@ import 'classes.dart';
 import 'datasource/student_list.dart';
 
 class App extends StatelessWidget {
+  List<VoidCallback> onStartMethods;
+
   @override
   Widget build(BuildContext context) {
+    runMethods();
     // TODO: implement build
     return new MaterialApp(
       title: "Tamagochi",
@@ -17,6 +20,14 @@ class App extends StatelessWidget {
         body: AppBody(),
       ),
     );
+  }
+
+  App(this.onStartMethods);
+
+  void runMethods() {
+    this.onStartMethods.forEach((element) {
+      element.call();
+    });
   }
 }
 
