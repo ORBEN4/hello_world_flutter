@@ -44,8 +44,12 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+<<<<<<< HEAD
 
 
 # New ignores
 #resources
 lib/main.dart
+=======
+lib/mockup/datasource/createDB.sql
+>>>>>>> mockup
