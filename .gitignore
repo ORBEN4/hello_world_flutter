@@ -50,6 +50,4 @@ app.*.map.json
 # New ignores
 #resources
 lib/main.dart
-=======
 lib/mockup/datasource/createDB.sql
->>>>>>> mockup
