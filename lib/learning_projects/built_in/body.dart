@@ -79,6 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
     _counter = CalculatorFactory()
         .getCalculator()
         .calculate(_counter, getActualRandom());
+    // _counter++;
   }
 
   double getActualRandom() {
